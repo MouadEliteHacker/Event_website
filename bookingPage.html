@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Booking</title>
+    <link rel="stylesheet" href="bookingPage.css">
+</head>
+<body>
+    <div class="bg">
+    <div class="booking-form">
+        <h1>Book Your Event</h1>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+                <label for="ticketNumber">Ticket Number:</label>
+                <input type="text" id="ticketNumber" name="ticketNumber" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <input type="submit" value="Book Now">
+            </form>
+        </div>
+    </div>
+
+    <div id="thankYouMessage" class="hidden">
+        Thank you for booking! We will contact you shortly.
+    </div>
+</body>
+</html>
+

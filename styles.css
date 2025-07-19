@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('c:\Users\rosie\OneDrive\New folder\yaya\audience-1853662_1280.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: hsl(0, 0%, 20%);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo {
+    font-size: 1.5em;
+}
+
+header .search-bar input {
+    padding: 5px;
+}
+
+header .user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    background-color: hsl(0, 0%, 20%);
+    color: #fff;
+    width: 250px;
+    padding: 20px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu-item {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid hsl(0, 0%, 20%);
+}
+
+.sidebar .submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidebar .submenu li {
+    padding: 5px 0;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+main .banner img {
+    width: 55%;
+    height: auto;
+    background-position: left;
+    background-size: cover;
+}
+
+main .info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+main .info img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+footer {
+    background-color: hsl(0, 0%, 20%);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}

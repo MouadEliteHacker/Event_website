@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Event Management System</title>
+    <link rel="stylesheet" href="contact us.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="contact-container">
+        <img src="AyoZaml1.png" alt="Chamel Events Logo" class="logo">
+        <header class="contact-header">
+            <h1 class="text">Contact Us</h1>
+        </header>
+        <div class="contact-details">
+            <p><strong>Main switchboard:</strong></p>
+            <p><a href="tel:+440123456789"><i class="fas fa-phone"></i> +44 (0)123 456 789</a></p>
+            
+            <p><strong>Emergencies on event:</strong></p>
+            <p><a href="tel:+440987654321"><i class="fas fa-phone"></i> +44 (0)987 654 321</a></p>
+            
+            <p><strong>Thinking of booking an event with us?</strong></p>
+            <p><a href="tel:+440555666777"><i class="fas fa-phone"></i> +44 (0)555 666 777</a></p>
+            <p><a href="https://wa.me/440555666888"><i class="fab fa-whatsapp"></i> WhatsApp: +44 0555 666 888</a></p>
+            
+            <p><strong>Follow us on Instagram:</strong></p>
+            <p><a href="https://instagram.com/event_system"><i class="fab fa-instagram"></i> @event_system</a></p>
+        </div>
+        
+        <div class="contact-form">
+            <h2>Get in touch with us</h2>
+            <form action="/submit_form" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="reason">Reason for Contacting:</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+                
+                <button type="reset">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
