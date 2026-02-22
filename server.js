@@ -6,12 +6,12 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// ─── Middleware ───────────────────────────────────────────────────────────────
+//Mware
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ─── Database ─────────────────────────────────────────────────────────────────
+// Db
 const db = new sqlite3.Database('./website.db', (err) => {
     if (err) {
         console.error('Error connecting to database:', err.message);
@@ -20,12 +20,11 @@ const db = new sqlite3.Database('./website.db', (err) => {
     }
 });
 
-// ════════════════════════════════════════════════════════════════════════════════
-// AUTH ROUTES  (was: port 3003 - login1.js, port 3000 - register1.js)
-// ════════════════════════════════════════════════════════════════════════════════
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'EVENTPROJECT.HTML'));
 });
+
 // POST /register
 app.post('/register', (req, res) => {
     const { firstName, lastName, age, email, password } = req.body;
@@ -78,9 +77,7 @@ app.post('/login', (req, res) => {
     });
 });
 
-// ════════════════════════════════════════════════════════════════════════════════
-// USER / PROFILE ROUTES  (was: port 3006 - profile1.js, port 3008 - choice1.js)
-// ════════════════════════════════════════════════════════════════════════════════
+
 
 // GET /active-user  — fetch the currently logged-in user's profile
 app.get('/active-user', (req, res) => {
@@ -106,7 +103,7 @@ app.post('/logout', (req, res) => {
     });
 });
 
-// POST /choice  — check if a user is logged in (used before redirecting to Profile)
+// POST /choice  — check if a user is logged in 
 app.post('/choice', (req, res) => {
     db.get("SELECT * FROM users WHERE is_active = 1", (err, row) => {
         if (err) {
@@ -120,11 +117,9 @@ app.post('/choice', (req, res) => {
     });
 });
 
-// ════════════════════════════════════════════════════════════════════════════════
-// BOOKING ROUTES  (was: port 3002 - book1.js, port 3004 - bookings1.js)
-// ════════════════════════════════════════════════════════════════════════════════
 
-// GET /test  — health check (kept from original book server)
+
+// GET /test  
 app.get('/test', (req, res) => {
     res.json({ message: 'Server is running!' });
 });
@@ -192,7 +187,7 @@ app.post('/bookings', (req, res) => {
     });
 });
 
-// ─── Start ────────────────────────────────────────────────────────────────────
+// Start
 app.listen(PORT, () => {
     console.log(`✅ Server running at http://localhost:${PORT}`);
     console.log(`   All routes available on a single port — no more port juggling!`);
