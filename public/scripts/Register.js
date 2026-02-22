@@ -1,9 +1,8 @@
 console.log('Register.js is loaded and running');
 
 async function Register_user(event) {
-    console.log('Form submitted');
     event.preventDefault();
-    
+
     const formData = {
         firstName: document.getElementById('firstName').value.trim(),
         lastName: document.getElementById('lastName').value.trim(),
@@ -12,8 +11,6 @@ async function Register_user(event) {
         password: document.getElementById('password').value,
         confirmPassword: document.getElementById('confirmPassword').value
     };
-
-    console.log('Form data:', formData);
 
     if (!formData.firstName || !formData.lastName || !formData.age || !formData.email || !formData.password) {
         alert("All fields are required!");
@@ -26,11 +23,9 @@ async function Register_user(event) {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/register1', {
+        const response = await fetch('/register', {      
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 firstName: formData.firstName,
                 lastName: formData.lastName,
@@ -40,17 +35,14 @@ async function Register_user(event) {
             })
         });
 
-        console.log('Response status:', response.status);
-        
         const data = await response.json();
-        console.log('Response data:', data);
-        
+
         if (response.ok) {
             alert("User registered successfully!");
             document.getElementById('registrationForm').reset();
+            window.location.href = "Login.html";
             return true;
         } else {
-            console.error("Registration failed:", data);
             alert(`Failed to register user: ${data.error || 'Unknown error'}`);
             return false;
         }
@@ -62,10 +54,8 @@ async function Register_user(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded');
     const form = document.getElementById('registrationForm');
     if (form) {
-        console.log('Form found');
         form.removeAttribute('onsubmit');
         form.addEventListener('submit', Register_user);
     } else {

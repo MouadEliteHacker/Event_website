@@ -9,7 +9,7 @@
     "sqlite3": "^5.1.7"
   },
   "scripts": {
-  "start": "node start_servers.js",
+  "start": "node server.js",
   "postinstall": "npm start"
 }
 }

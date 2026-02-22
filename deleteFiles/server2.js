@@ -9,7 +9,7 @@ const PORT = 3003;
 // Middleware
 app.use(express.json());
 app.use(cors());
-
+app.use(express.static('public'));
 // Connect to the SQLite database
 const db = new sqlite3.Database("website.db", (err) => {
     if (err) {

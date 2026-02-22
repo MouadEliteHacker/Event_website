@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Event</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/Event.css">
+    
+</head>
+<body>
+
+    <a href="/" class="back-btn">Back to events</a>
+
+    <!-- Loading state -->
+    <div class="state-screen" id="loading-state">
+        <div class="spinner"></div>
+        <span>Loading event</span>
+    </div>
+
+    <!-- Error state (hidden by default) -->
+    <div class="state-screen" id="error-state" style="display:none;">
+        <div class="big">404</div>
+        <span>Event not found</span>
+        <a href="/" style="color:var(--accent); margin-top:8px; font-size:13px; text-decoration:none;">← Go back</a>
+    </div>
+
+    <!-- Main content (hidden until data loads) -->
+    <main id="main-content" style="display:none;">
+
+        <section class="hero">
+            <img id="event-image" class="hero-img" src="" alt="">
+            <div class="hero-gradient"></div>
+            <div class="hero-content">
+                <span class="genre-tag">Live Event</span>
+                <h1 class="hero-title" id="event-name"></h1>
+            </div>
+        </section>
+
+        <section class="body-section">
+            <p class="section-label">About the event</p>
+            <p class="description-text" id="event-description"></p>
+
+            <div class="cta-wrapper">
+                <a href="#" class="book-btn" id="book-btn">Book Tickets</a>
+                <span class="book-note">Cheapest tickets on the market</span>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <footer class="footer">
+            <div class="footer-grid">
+                <div>
+                    <h3>Chamel Events</h3>
+                    <p>Top-notch event services.<br>Advertising events &amp; providing<br>the cheapest tickets on the market.</p>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Mill Lane, De Montfort University</li>
+                        <li>+44 (0)123 456 789</li>
+                        <li>info@chamel.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">X / Twitter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Newsletter</h3>
+                    <form class="newsletter-form" onsubmit="return false;">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Go</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Chamel Event Management. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="event.js"></script>
+</body>
+</html>
